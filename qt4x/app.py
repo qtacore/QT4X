@@ -16,7 +16,8 @@
 '''
 
 import subprocess
-from testbase.platform.jsonrpc import ServerProxy
+from testbase.retry import Retry
+from qt4x.jsonrpc import ServerProxy
 
 class App(object):
     '''Application
@@ -31,6 +32,16 @@ class App(object):
         self._driver = None
         self._p = subprocess.Popen(["python", "-m", self.ENTRY, str(self.PORT)])
         self._instances.append(self)
+        self._wait_driver_ready()
+
+    def _wait_driver_ready(self):
+        for _ in Retry(timeout=5):
+            try:        
+                driver = self.get_driver()
+                driver.hello()
+                break
+            except:
+                pass
         
     @property
     def pid(self):
@@ -54,5 +65,5 @@ class App(object):
         
 if __name__ == '__main__':
     app = App()
-    print app.pid
+    print(app.pid)
     app.stop()

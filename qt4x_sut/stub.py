@@ -15,6 +15,8 @@
 '''Test Stub
 '''
 
+from __future__ import print_function, unicode_literals, absolute_import
+
 import re
 
 from qt4x_sut.event import EnumEvent
@@ -25,6 +27,9 @@ class StubService(object):
     def __init__(self, app, wndmgr ):
         self._app = app
         self._wndmgr = wndmgr
+
+    def hello(self):
+        return "hello"
         
     def get_window_by_name(self, name ):
         '''get window by name

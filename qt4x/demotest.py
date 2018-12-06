@@ -15,6 +15,8 @@
 '''Test for demo App
 '''
 
+#from __future__ import print_function, unicode_literals, absolute_import
+
 from qt4x.testcase import QT4xTestCase
 from qt4x.app import App
 from qt4x.qpath import QPath

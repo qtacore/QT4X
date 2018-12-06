@@ -17,12 +17,14 @@
 Fake UI framework, using `etree` as UI element tree.
 '''
 
+from __future__ import print_function, unicode_literals, absolute_import
+
 import collections
 import threading
 import StringIO
 from xml.etree import ElementTree
 
-from testbase.platform.jsonrpc import SimpleJSONRPCServer
+from qt4x.jsonrpc import SimpleJSONRPCServer
 from qt4x_sut.stub import StubService
 from qt4x_sut.event import EnumEvent
 

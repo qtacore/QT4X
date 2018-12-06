@@ -19,8 +19,8 @@ import re
 import time
 
 from testbase.util import Timeout, LazyInit
-from testbase.platform.jsonrpc import ServerError
 from tuia.exceptions import ControlNotFoundError, ControlAmbiguousError, ControlExpiredError
+from qt4x.jsonrpc import ServerError
 from qt4x.qpath import QPath
 
 CONTROL_EXPIRED_ERROR = 1

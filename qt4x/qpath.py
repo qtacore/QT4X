@@ -14,6 +14,7 @@
 #
 '''QPath
 '''
+from __future__ import print_function, unicode_literals, absolute_import
 
 from tuia.qpathparser import QPathParser
 
